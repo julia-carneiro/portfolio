@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
@@ -10,7 +10,13 @@ import {
   Linkedin,
   Mail,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import PixelGameLayer from "./PixelGameLayer"; // Import the new PixelGameLayer
 
 // Internationalization interfaces
 interface LanguageContent {
@@ -217,6 +223,8 @@ const art3DProjects: Art3DProject[] = [
 ];
 
 const GamePortfolio: React.FC = () => {
+  const scrollRef = useRef(null);
+  const { scrollY } = useScroll({ container: scrollRef });
   const [selectedGame, setSelectedGame] = useState<GameProject | null>(null);
   const [selectedArt, setSelectedArt] = useState<Art3DProject | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
@@ -269,11 +277,17 @@ const GamePortfolio: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100 py-12 px-4 sm:px-6 lg:px-8 text-gray-800">
+    <div
+      ref={scrollRef}
+      className="relative min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 overflow-y-scroll"
+    >
+      {/* Pixel Art Parallax Background */}
+      <PixelGameLayer scrollY={scrollY} />
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-6xl mx-auto"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-800"
       >
         {/* Language Toggle Button */}
         <button
