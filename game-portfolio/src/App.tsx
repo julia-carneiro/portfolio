@@ -462,7 +462,7 @@ const GamePortfolio: React.FC = () => {
                   className="group"
                 >
                   <Card
-                    className="h-full flex flex-col overflow-hidden border-2 border-transparent group-hover:border-amber-500 transition-all duration-300"
+                    className="shadow-2xl h-full flex flex-col overflow-hidden border-2 border-transparent group-hover:border-amber-500 transition-all duration-300"
                     onClick={() => openGameDetails(game)}
                   >
                     <div className="relative overflow-hidden">
@@ -473,7 +473,7 @@ const GamePortfolio: React.FC = () => {
                       />
                       <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
                     </div>
-                    <CardContent className="p-4 flex-grow bg-rose-50">
+                    <CardContent className="p-4 flex-grow">
                       <h3 className="text-xl font-semibold text-amber-900 mb-2">
                         {game.title[language]}
                       </h3>
@@ -517,7 +517,7 @@ const GamePortfolio: React.FC = () => {
                   className="group"
                 >
                   <Card
-                    className="h-full flex flex-col overflow-hidden border-2 border-transparent group-hover:border-amber-500 transition-all duration-300"
+                    className="shadow-2xl h-full flex flex-col overflow-hidden border-2 border-transparent group-hover:border-amber-500 transition-all duration-300"
                     onClick={() => openArtDetails(art)}
                   >
                     <div className="relative overflow-hidden">
