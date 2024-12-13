@@ -291,7 +291,7 @@ const art3DProjects: Art3DProject[] = [
       pt: "Modelagem de um prato de panquecas feito como estudo inicial de 3D",
       en: "Modeling of a pancake plate made as an initial 3D study",
     },
-    images: ["/images/p2.PNG", "/images/p3.PNG", "/images/p1.GIF"],
+    images: ["images/p2.PNG", "images/p3.PNG", "images/p1.GIF"],
     link: "#",
     software: ["Nomad Sculpt"],
   },
