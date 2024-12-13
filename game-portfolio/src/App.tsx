@@ -30,6 +30,9 @@ interface LanguageContent {
   text3d: {
     text: string;
   };
+  software: {
+    soft: string;
+  };
 }
 
 const languageContent: Record<string, LanguageContent> = {
@@ -50,6 +53,9 @@ const languageContent: Record<string, LanguageContent> = {
     text3d: {
       text: "Aspirante a artista 3d, ainda estou aprendendo porém é uma área que tenho muito interesse!",
     },
+    software: {
+      soft: "Software usado",
+    },
   },
   en: {
     header: {
@@ -66,7 +72,10 @@ const languageContent: Record<string, LanguageContent> = {
       playNow: "Play Now",
     },
     text3d: {
-      text: "Aspirante a artista 3d, ainda estou aprendendo porém é uma área que tenho muito interesse!",
+      text: "Aspiring 3D artist, I am still learning, but it is an area I am very interested in!",
+    },
+    software: {
+      soft: "Software used",
     },
   },
 };
@@ -74,7 +83,10 @@ const languageContent: Record<string, LanguageContent> = {
 // Interfaces for Projects
 interface GameProject {
   id: number;
-  title: string;
+  title: {
+    pt: string;
+    en: string;
+  };
   description: {
     pt: string;
     en: string;
@@ -101,83 +113,105 @@ interface Art3DProject {
 const gameProjects: GameProject[] = [
   {
     id: 1,
-    title: "Mooh",
+    title: { pt: "Mooh", en: "Mooh" },
     description: {
-      pt: "Um RPG de aventura com mecânicas de combate únicas e um mundo expansivo para explorar. Desenvolvido com Unity, o jogo combina elementos de fantasia e mistério.",
-      en: "An adventure RPG with unique combat mechanics and an expansive world to explore. Developed with Unity, the game combines fantasy and mystery elements.",
+      pt: "Trabalhei como Game Designer e GameDev em Mooh, um jogo de plataforma 2D em Pixel Art, single-player, dos gêneros ação e puzzle. Em cinco planetas, criei o GDD geral do jogo e individual de cada planeta, além de desenvolver as mecânicas no GameMaker. A gameplay é baseado em uma plataforma 360º, onde a personagem se movimenta ao redor de planetas, com a câmera acompanhando o seu ângulo pelo relevo. Contemplado pela Lei Paulo Gustavo, o jogo terá seu vertical slice lançado na Steam em 2025 e já conta com uma demo disponível.",
+      en: "I worked as a Game Designer and Game Developer on Mooh, a 2D Pixel Art platformer, single-player game in the action and puzzle genres. Set across five planets, I created the overall and individual GDDs for each planet, as well as developing the mechanics in GameMaker. The gameplay is based on a 360º platform, where the character moves around planets, with the camera following their angular position along the terrain. Supported by the Paulo Gustavo Law, the game will release its vertical slice on Steam in 2025 and already has a demo available.",
     },
     cargo: ["GameDev", "Game Designer"],
     images: [
-      "/images/24-06_Mooh_Cabeçalho_460x215.png",
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600",
+      "/images/mooh/24-06_Mooh_CapaSteam.jpg",
+      "/images/mooh/mooh.png",
+      "/images/mooh/24_07_Mooh_Print_005.jpg",
+      "/images/mooh/24_07_Mooh_Print_006.jpg",
+      "/images/mooh/plataforma_180.gif",
     ],
     link: "https://store.steampowered.com/app/3030950/Mooh/",
-    plataformas: ["Unity", "C#"],
+    plataformas: ["PC"],
   },
   {
     id: 2,
-    title: "Colorful Ghosts",
+    title: { pt: "Colorful Ghosts", en: "Colorful Ghosts" },
     description: {
-      pt: "Jogo de corrida espacial com mecânicas de física realistas e design de naves customizáveis. Criado usando Unreal Engine para proporcionar uma experiência de corrida futurista.",
-      en: "Space racing game with realistic physics mechanics and customizable ship design. Created using Unreal Engine to provide a futuristic racing experience.",
+      pt: "Contribuí como Game Developer, desenvolvendo as mecânicas, e como Game Designer, elaborando o GDD e criando cerca de 50 níveis únicos em Colorful Ghosts, um jogo de lógica baseado em cores. O objetivo é posicionar os fantasmas nos espaços correspondentes às suas cores finais. O jogador utiliza doces para alterar as cores dos fantasmas, levando em conta seus tamanhos e como eles se encaixam nos espaços corretos.",
+      en: "I contributed as a Game Developer, developing the mechanics, and as a Game Designer, creating the GDD and around 50 unique levels for Colorful Ghosts, a logic game based on colors. The objective is to position the ghosts in spaces corresponding to their final colors. The player uses candies to change the colors of the ghosts, taking into account their sizes and how they fit into the correct spaces.",
     },
     cargo: ["GameDev", "Game Designer"],
     images: [
-      "/images/cg1.png",
-      "/images/print_lvl25.png",
-      "/api/placeholder/800/600",
+      "/images/cg/cg1.png",
+      "/images/cg/print1.png",
+      "/images/cg/print2.png",
+      "/images/cg/print3.png",
+      "/images/cg/print5.png",
     ],
-    link: "https://www.exemplo.com/colorful-ghosts",
-    plataformas: ["Unreal Engine", "C++"],
+    link: "https://store.steampowered.com/app/2976190/Colorful_Ghost/?l=portuguese",
+    plataformas: ["PC", "HTML5"],
   },
   {
     id: 3,
-    title: "Wood Cutter",
+    title: { pt: "Wood Cutter", en: "Wood Cutter" },
     description: {
-      pt: "Jogo de corrida espacial com mecânicas de física realistas e design de naves customizáveis. Criado usando Unreal Engine para proporcionar uma experiência de corrida futurista.",
-      en: "Space racing game with realistic physics mechanics and customizable ship design. Created using Unreal Engine to provide a futuristic racing experience.",
+      pt: "Trabalhei na fase final do desenvolvimento de Wood Cutter, contribuindo com a criação e implementação de novos níveis para o jogo. Wood Cutter é um jogo de puzzle onde o objetivo é cortar madeira em formatos específicos, utilizando o mínimo de cortes possível.",
+      en: "I worked on the final stage of Wood Cutter development, contributing to the creation and implementation of new levels for the game. Wood Cutter is a puzzle game where the goal is to cut wood into specific shapes using the fewest cuts possible.",
     },
     cargo: ["Level Designer"],
     images: [
-      "/images/Banner2.png",
-      "/images/print_lvl25.png",
-      "/api/placeholder/800/600",
+      "/images/woodcutter/Banner2.png",
+      "/images/woodcutter/corte.png",
+      "/images/woodcutter/print1_wood.png",
+      "/images/woodcutter/corte2.png",
     ],
     link: "https://bragiestudios.itch.io/wood-cutter",
-    plataformas: ["Unreal Engine", "C++"],
+    plataformas: ["Mobile", "HTML5"],
   },
   {
     id: 4,
-    title: "Midas Touch",
+    title: { pt: "Midas Touch", en: "Midas Touch" },
     description: {
-      pt: "Jogo de corrida espacial com mecânicas de física realistas e design de naves customizáveis. Criado usando Unreal Engine para proporcionar uma experiência de corrida futurista.",
-      en: "Space racing game with realistic physics mechanics and customizable ship design. Created using Unreal Engine to provide a futuristic racing experience.",
+      pt: "Em Midas Touch, um jogo para HTML5, fui responsável por criar o GDD e desenvolver as mecânicas principais do jogo. Midas Touch é um puzzle com visão isométrica, onde o objetivo é juntar elementos iguais. Os blocos de frutas se movem apenas em uma direção, e o jogador deve descobrir como agrupá-los com outros blocos iguais.",
+      en: "In Midas Touch, an HTML5 game, I was responsible for creating the GDD and developing the core mechanics. Midas Touch is an isometric puzzle game where the goal is to match identical elements. The fruit blocks only move in one direction, and the player must figure out how to group them with other matching blocks.",
     },
     cargo: ["GameDev", "Game Designer"],
     images: [
-      "/images/midas.png",
-      "/images/print_lvl25.png",
-      "/api/placeholder/800/600",
+      "/images/midas/midas.png",
+      "/images/midas/print1.png",
+      "/images/midas/print2.png",
+      "/images/midas/gif1.gif",
     ],
     link: "https://bragiestudios.com/HTML5GAMES/MidasTouch_BETA/",
-    plataformas: ["Unreal Engine", "C++"],
+    plataformas: ["HTML5"],
   },
   {
     id: 5,
-    title: "AstroCatch",
+    title: { pt: "AstroCatch", en: "AstroCatch" },
     description: {
-      pt: "Jogo de corrida espacial com mecânicas de física realistas e design de naves customizáveis. Criado usando Unreal Engine para proporcionar uma experiência de corrida futurista.",
-      en: "Space racing game with realistic physics mechanics and customizable ship design. Created using Unreal Engine to provide a futuristic racing experience.",
+      pt: "Trabalhei como Game Designer, idealizando como seria a mecânica e elementos do AstroCatch. Também participei no desenvolvimento inicial do jogo. O AstroCatch envolve um gato astronauta lançado no espaço, onde o jogador o controla com o mouse para coletar planetas flutuantes enquanto desvia de inimigos que causam dano ao colidir.",
+      en: "I worked as Game Designer, conceptualizing the mechanics and elements of AstroCatch. I also contributed to the initial development of the game. AstroCatch involves an astronaut cat launched into space, where the player controls them with the mouse to collect floating planets while dodging enemies that deal damage upon collision.",
     },
     cargo: ["Game Designer", "GameDev"],
     images: [
-      "/images/capa.png",
-      "/images/print_lvl25.png",
-      "/api/placeholder/800/600",
+      "/images/astrocatch/capa.png",
+      "/images/astrocatch/cat1.png",
+      "/images/astrocatch/cat2.png",
+      "/images/astrocatch/cat3.png",
     ],
     link: "https://bragiestudios.com/HTML5GAMES/AstroCatch_BETA/v000_000_302/",
-    plataformas: ["Unreal Engine", "C++"],
+    plataformas: ["HTML5"],
+  },
+  {
+    id: 6,
+    title: {
+      pt: "O seu jogo!",
+      en: "Your game!",
+    },
+    description: {
+      pt: "Meu próximo projeto pode ser o jogo que você idealiza! Tenho experiência em desenvolver jogos para Web, mobile e PC, abrangendo desde jogos educativos e casuais até plataforma e ação. ",
+      en: "My next project could be the game you envision! I have experience developing games for Web, mobile, and PC, ranging from educational and casual games to platform and action titles.",
+    },
+    cargo: ["Game Designer", "GameDev"],
+    images: ["/images/Prancheta 1.png"],
+    link: "mailto:juliacgsouza@gmail.com",
+    plataformas: ["GameMaker", "C++"],
   },
 ];
 
@@ -185,35 +219,102 @@ const gameProjects: GameProject[] = [
 const art3DProjects: Art3DProject[] = [
   {
     id: 1,
-    title: "Mooh Character",
+    title: "Mooh 3D ",
     description: {
-      pt: "Modelagem 3D do personagem principal do jogo Mooh, capturando sua essência de aventureiro.",
-      en: "3D Modeling of the main character from the Mooh game, capturing their adventurer essence.",
+      pt: "Modelagem 3D inspirada na personagem principal do jogo Mooh.",
+      en: "3D Modeling inspired by the main character from the game Mooh.",
     },
     images: [
-      "/images/24-06_Mooh_Cabeçalho_460x215.png",
-      "/images/mooh-character-2.png",
-      "/images/mooh-character-3.png",
+      "/images/mooh3d/m1.jpeg",
+      "/images/mooh3d/m2.jpeg",
+      "/images/mooh3d/m3.jpeg",
+      "/images/mooh3d/m4.jpeg",
+      "/images/mooh3d/m5.jpeg",
+      "/images/mooh3d/m6.jpeg",
     ],
     link: "#",
-    software: ["Blender", "ZBrush"],
+    software: ["Nomad Sculpt"],
   },
   {
     id: 2,
-    title: "Spaceship Design",
+    title: "Daughter of Hallownest",
     description: {
-      pt: "Design de nave espacial para o projeto Colorful Ghosts, focando em linhas futuristas e dinâmicas.",
-      en: "Spaceship design for the Colorful Ghosts project, focusing on futuristic and dynamic lines.",
+      pt: "Modelagem da Hornet do jogo Hollow Knight.",
+      en: "3D Modeling og Hornet from the game Hollow Knight.",
     },
     images: [
-      "/images/cg1.png",
-      "/images/spaceship-2.png",
-      "/images/spaceship-3.png",
+      "/images/hollow/h2.PNG",
+      "/images/hollow/h1.PNG",
+      "/images/hollow/h4.GIF",
+      "/images/hollow/h5.PNG",
+      "/images/hollow/h6.GIF",
     ],
     link: "#",
-    software: ["Maya", "Substance Painter"],
+    software: ["Nomad Sculpt"],
   },
-  // ... (add more art projects similarly)
+  {
+    id: 3,
+    title: "Elf",
+    description: {
+      pt: "Modelagem de uma menina meio Elfa :)",
+      en: "3D Modeling of an Elf girl",
+    },
+    images: [
+      "/images/menina/m1.png",
+      "/images/menina/m3.png",
+      "/images/menina/m2.png",
+      "/images/menina/m4.png",
+    ],
+    link: "#",
+    software: ["Nomad Sculpt"],
+  },
+  {
+    id: 4,
+    title: "Gameboy",
+    description: {
+      pt: "Modelagem de um Gameboy",
+      en: "3D Modeling of a Gameboy",
+    },
+    images: [
+      "/images/gameboy/g2.PNG",
+      "/images/gameboy/g1.PNG",
+      "/images/gameboy/g3.GIF",
+      "/images/gameboy/g4.GIF",
+    ],
+    link: "#",
+    software: ["Nomad Sculpt"],
+  },
+  {
+    id: 5,
+    title: "Panquecas",
+    description: {
+      pt: "Modelagem de um prato de panquecas feito como estudo inicial de 3D",
+      en: "Modeling of a pancake plate made as an initial 3D study",
+    },
+    images: [
+      "/images/panquecas/p2.PNG",
+      "/images/panquecas/p3.PNG",
+      "/images/panquecas/p1.GIF",
+    ],
+    link: "#",
+    software: ["Nomad Sculpt"],
+  },
+  {
+    id: 6,
+    title: "Monstrinha",
+    description: {
+      pt: "Modelagem de uma criatura fofinha, uma das primeiras que fiz.",
+      en: "Modeling of a cute creature, one of the firsts 3Ds that a did.",
+    },
+    images: [
+      "/images/monster/mo1.PNG",
+      "/images/monster/mo2.PNG",
+      "/images/monster/mo3.PNG",
+      "/images/monster/mo4.PNG",
+    ],
+    link: "#",
+    software: ["Nomad Sculpt"],
+  },
 ];
 
 const GamePortfolio: React.FC = () => {
@@ -367,14 +468,14 @@ const GamePortfolio: React.FC = () => {
                     <div className="relative overflow-hidden">
                       <img
                         src={game.images[0]}
-                        alt={game.title}
+                        alt={game.title[language]}
                         className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
                     </div>
                     <CardContent className="p-4 flex-grow bg-rose-50">
                       <h3 className="text-xl font-semibold text-amber-900 mb-2">
-                        {game.title}
+                        {game.title[language]}
                       </h3>
                       <div className="flex flex-wrap gap-2 mb-2">
                         {game.cargo.map((role) => (
@@ -450,12 +551,14 @@ const GamePortfolio: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+              onClick={closeGameDetails}
             >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 className="bg-amber-50 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-auto"
+                onClick={(e) => e.stopPropagation()}
               >
                 <div className="grid md:grid-cols-2 gap-6 p-6 relative">
                   {/* Close Button */}
@@ -528,7 +631,7 @@ const GamePortfolio: React.FC = () => {
                   {/* Game Details */}
                   <div className="space-y-4">
                     <h2 className="text-3xl font-bold text-amber-900">
-                      {selectedGame.title}
+                      {selectedGame.title[language]}
                     </h2>
                     <p className="text-amber-800">
                       {selectedGame.description[language]}
@@ -597,12 +700,14 @@ const GamePortfolio: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+              onClick={closeArtDetails}
             >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 className="bg-amber-50 rounded-xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-auto"
+                onClick={(e) => e.stopPropagation()}
               >
                 <div className="grid md:grid-cols-2 gap-8 p-8 relative">
                   {/* Close Button */}
@@ -642,13 +747,19 @@ const GamePortfolio: React.FC = () => {
                     {selectedArt.images.length > 1 && (
                       <>
                         <button
-                          onClick={prevImage}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            prevImage();
+                          }}
                           className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/50 backdrop-blur-sm p-2 rounded-full hover:bg-white/75 transition"
                         >
                           <ChevronLeft className="text-gray-800" />
                         </button>
                         <button
-                          onClick={nextImage}
+                          onClick={(e) => {
+                            e.stopPropagation(); // Adicione esta linha
+                            nextImage();
+                          }}
                           className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 backdrop-blur-sm p-2 rounded-full hover:bg-white/75 transition"
                         >
                           <ChevronRight className="text-gray-800" />
@@ -685,7 +796,7 @@ const GamePortfolio: React.FC = () => {
                     {selectedArt.software && (
                       <div>
                         <h3 className="font-semibold text-gray-800 mb-2">
-                          Software Used:
+                          {languageContent[language].software.soft}
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {selectedArt.software.map((soft) => (
