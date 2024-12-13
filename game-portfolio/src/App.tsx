@@ -59,7 +59,7 @@ const languageContent: Record<string, LanguageContent> = {
   },
   en: {
     header: {
-      name: "Julia Carneiro",
+      name: "Júlia Carneiro",
       role: "Game Developer & Game Designer",
     },
     tabs: {
